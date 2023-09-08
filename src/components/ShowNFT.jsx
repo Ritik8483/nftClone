@@ -1,7 +1,7 @@
 import Identicon from 'react-identicons'
 import { FaTimes } from 'react-icons/fa'
 import { useGlobalState, setGlobalState, truncate, setAlert } from '../store'
-// import { buyNFT } from '../Blockchain.Services'
+import { buyNFT } from '../Blockchain.Services'
 
 const ShowNFT = () => {
   const [showModal] = useGlobalState('showModal')
@@ -20,14 +20,14 @@ const ShowNFT = () => {
       msg: 'Initializing NFT transfer...',
     })
 
-    // try {
-    //   await buyNFT(nft)
-    //   setAlert('Transfer completed...', 'green')
-    //   window.location.reload()
-    // } catch (error) {
-    //   console.log('Error transfering NFT: ', error)
-    //   setAlert('Purchase failed...', 'red')
-    // }
+    try {
+      await buyNFT(nft)
+      setAlert('Transfer completed...', 'green')
+      window.location.reload()
+    } catch (error) {
+      console.log('Error transfering NFT: ', error)
+      setAlert('Purchase failed...', 'red')
+    }
   }
 
   return (

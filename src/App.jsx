@@ -11,6 +11,9 @@ import UpdateNFT from "./components/UpdateNFT";
 import { getAllNFTs, isWallectConnected } from "./Blockchain.Services";
 import Alert from "./components/Alert";
 
+// REACT_APP_INFURIA_PID=2Gg95YqQ672apEtGQbewfwGQANc
+// REACT_APP_INFURIA_API=b2c85789868e83772bfbc59ddd6d09bb
+
 const App = () => {
   useEffect(async () => {
     await isWallectConnected();

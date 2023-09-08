@@ -1,8 +1,8 @@
-// import Identicon from 'react-identicons'
+import Identicon from 'react-identicons'
 import { setGlobalState, useGlobalState, truncate } from '../store'
 
 const Hero = () => {
-//   const [connectedAccount] = useGlobalState('connectedAccount')
+  const [connectedAccount] = useGlobalState('connectedAccount')
   const onCreatedNFT = () => {
     setGlobalState('modal', 'scale-100')
   }
@@ -60,18 +60,17 @@ const Hero = () => {
           className="h-60 w-full object-cover"
         />
         <div className="flex justify-start items-center p-3">
-          {/* <Identicon
+          <Identicon
             string={connectedAccount ? connectedAccount : 'Connect Your Wallet'}
             size={50}
             className="h-10 w-10 object-contain rounded-full mr-3"
-          /> */}
+          />
           <div>
-            {/* <p className="text-white font-semibold">
+            <p className="text-white font-semibold">
               {connectedAccount
                 ? truncate(connectedAccount, 4, 4, 11)
                 : 'Connect Your Wallet'}
-            </p> */}
-            <p>Connect Your Wallet</p>
+            </p>
             <small className="text-pink-800 font-bold">@you</small>
           </div>
         </div>

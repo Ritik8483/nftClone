@@ -8,7 +8,7 @@ import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { create } from "ipfs-http-client";
 import { mintNFT } from "../Blockchain.Services";
-console.log(process.env.REACT_APP_INFURIA_PID);
+
 const auth =
   "Basic " +
   Buffer.from(
@@ -41,7 +41,6 @@ const CreateNFT = () => {
       const created = await client.add(fileUrl);
       const metadataURI = `https://ipfs.io/ipfs/${created.path}`;
       const nft = { title, price, description, metadataURI };
-
       setLoadingMsg("Intializing transaction...");
       setFileUrl(metadataURI);
       await mintNFT(nft);

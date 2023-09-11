@@ -38,3 +38,9 @@ const App = () => {
 };
 
 export default App;
+
+//Stating user guide
+//1. npm install -g truffle , truffle version command will shows you all all versions
+//2. npm install -g ganache-cli , ganache-cli --v
+//3.ganache-cli -d (used to create account with eth)
+//4.truffle migrate (used to deploy contract)
